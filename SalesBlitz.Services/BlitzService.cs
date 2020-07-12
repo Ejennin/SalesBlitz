@@ -10,7 +10,7 @@ namespace SalesBlitz.Service
 {
     public class BlitzService
     {
-        private readonly Guid _userId;
+        public readonly Guid _userId;
         public BlitzService (Guid userId)
         {
             _userId = userId;
@@ -42,6 +42,7 @@ namespace SalesBlitz.Service
                 int BlitzId = 0;
                 var query =
                     ctx
+                    // May need to change out BlitzID to RepId or Lead Id
                         .Blitzes
                         .Where(e => e.BlitzId == BlitzId)
                         .Select(
@@ -57,6 +58,57 @@ namespace SalesBlitz.Service
                         );
 
                 return query.ToArray();
+            }
+        }
+
+        public BlitzDetail GetBlitzById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity = ctx
+                        .Blitzes
+                        .Single(e => e.BlitzId == id && e.UserId == _userId);
+                return
+                    new BlitzDetail
+                    {
+                        BlitzId = entity.BlitzId,
+                        Name = entity.Name,
+                        Location = entity.Location,
+                        Date = entity.Date
+                        
+                    };
+            }
+        }
+
+        public bool UpdateBlitz(BlitzEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Blitzes
+                        .Single(e => e.BlitzId == model.BlitzId && e.UserId == _userId);
+
+                entity.Name = model.Name;
+                entity.Location = (string)model.Location;
+                entity.Date = model.Date;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteBlitz(int BlitzId)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Blitzes
+                        .Single(e => e.BlitzId == BlitzId && e.UserId == _userId);
+
+                ctx.Blitzes.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
             }
         }
     }

@@ -9,6 +9,8 @@ namespace SalesBlitz.Data
 {
     public class Blitz
     {
+        public readonly Guid UserId;
+
         [Key]
         public int BlitzId { get; set; }
         public String Name { get; set; }

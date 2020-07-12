@@ -253,6 +253,8 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Blitz\Index.cshtml" />
     <Content Include="Views\Blitz\Create.cshtml" />
+    <Content Include="Views\Blitz\Details.cshtml" />
+    <Content Include="Views\Blitz\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
