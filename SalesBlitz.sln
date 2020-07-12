@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesBlitz.Data", "SalesBli
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesBlitz.Models", "SalesBlitz.Models\SalesBlitz.Models.csproj", "{B1D0960D-3548-42B2-957F-E47E0EF55303}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesBlitz.Services", "SalesBlitz.Services\SalesBlitz.Services.csproj", "{7C40300B-5D12-4CF9-9B21-1BDFBD06008F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SalesBlitz.Service", "SalesBlitz.Services\SalesBlitz.Service.csproj", "{7C40300B-5D12-4CF9-9B21-1BDFBD06008F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -184,6 +184,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\BlitzController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
@@ -250,6 +251,8 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Blitz\Index.cshtml" />
+    <Content Include="Views\Blitz\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -276,9 +279,9 @@
       <Project>{b1d0960d-3548-42b2-957f-e47e0ef55303}</Project>
       <Name>SalesBlitz.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SalesBlitz.Services\SalesBlitz.Services.csproj">
+    <ProjectReference Include="..\SalesBlitz.Services\SalesBlitz.Service.csproj">
       <Project>{7c40300b-5d12-4cf9-9b21-1bdfbd06008f}</Project>
-      <Name>SalesBlitz.Services</Name>
+      <Name>SalesBlitz.Service</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

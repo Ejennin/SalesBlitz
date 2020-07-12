@@ -57,12 +57,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="BlitzService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesBlitz.Data\SalesBlitz.Data.csproj">
+      <Project>{a675512f-f62c-470e-b1b8-8b6f535083c9}</Project>
+      <Name>SalesBlitz.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SalesBlitz.Models\SalesBlitz.Models.csproj">
+      <Project>{b1d0960d-3548-42b2-957f-e47e0ef55303}</Project>
+      <Name>SalesBlitz.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
