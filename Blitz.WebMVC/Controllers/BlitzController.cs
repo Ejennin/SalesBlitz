@@ -49,10 +49,10 @@ namespace Blitz.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details(int id)
+        public ActionResult Details()
         {
             var svc = CreateBlitzService();
-            var model = svc.GetBlitzById(id);
+            var model = svc.GetBlitzes();
 
             return View(model);
         }

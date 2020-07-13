@@ -255,6 +255,8 @@
     <Content Include="Views\Blitz\Create.cshtml" />
     <Content Include="Views\Blitz\Details.cshtml" />
     <Content Include="Views\Blitz\Edit.cshtml" />
+    <Content Include="Views\Blitz\Delete.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTimeOffset.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -57,8 +57,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AccountService.cs" />
     <Compile Include="BlitzService.cs" />
+    <Compile Include="LeadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepatBlitzService.cs" />
+    <Compile Include="RepsService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

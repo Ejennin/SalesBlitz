@@ -57,10 +57,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs" />
     <Compile Include="Blitz.cs" />
-    <Compile Include="Class1.cs" />
+    <Compile Include="Lead.cs" />
+    <Compile Include="Reps.cs" />
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepsAtBlitz.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
