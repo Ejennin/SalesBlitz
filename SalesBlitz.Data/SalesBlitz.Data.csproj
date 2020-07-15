@@ -60,15 +60,30 @@
     <Compile Include="Account.cs" />
     <Compile Include="Blitz.cs" />
     <Compile Include="Lead.cs" />
-    <Compile Include="Reps.cs" />
-    <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202007131545333_first.cs" />
+    <Compile Include="Migrations\202007131545333_first.designer.cs">
+      <DependentUpon>202007131545333_first.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Rep.cs" />
+    <Compile Include="IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RepsAtBlitz.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202007131545333_first.resx">
+      <DependentUpon>202007131545333_first.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SalesBlitz.Models\SalesBlitz.Models.csproj">
+      <Project>{b1d0960d-3548-42b2-957f-e47e0ef55303}</Project>
+      <Name>SalesBlitz.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

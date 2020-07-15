@@ -61,7 +61,19 @@
     <Compile Include="BlitzEdit.cs" />
     <Compile Include="BlitzItem.cs" />
     <Compile Include="BlitzDetail.cs" />
+    <Compile Include="LeadModels\LeadCreate.cs" />
+    <Compile Include="LeadModels\LeadDetail.cs" />
+    <Compile Include="LeadModels\LeadEdit.cs" />
+    <Compile Include="LeadModels\LeadItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RepsAtBlitzModels\RepAtBlitzCreate.cs" />
+    <Compile Include="RepsAtBlitzModels\RepAtBlitzEdit.cs" />
+    <Compile Include="RepsAtBlitzModels\RepAtBlitzItem.cs" />
+    <Compile Include="RepsAtBlitzModels\RepAtBlitzDetail.cs" />
+    <Compile Include="RepsModels\RepCreate.cs" />
+    <Compile Include="RepsModels\RepDetail.cs" />
+    <Compile Include="RepsModels\RepEdit.cs" />
+    <Compile Include="RepsModels\RepList.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -69,9 +81,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="AccountsModels\" />
-    <Folder Include="LeadModels\" />
-    <Folder Include="RepsAtBlitzModels\" />
-    <Folder Include="RepsModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

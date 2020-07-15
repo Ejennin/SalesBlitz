@@ -12,11 +12,18 @@ namespace SalesBlitz.Data
     {
         [Key]
         public int LeadId { get; set; }
+        [Required]
         public string Content { get; set; }
+
         public string Origin { get; set; }
 
         public string Status { get; set; }
+
         public int BlitzID { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
+
+        public string Url { get; set; }
 
     }
 }

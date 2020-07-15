@@ -18,7 +18,7 @@ namespace Blitz.WebMVC.Controllers
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
             var service = new BlitzService(userId);
-            var model = service.GetBlitzes();
+            var model = service.GetBlitz();
 
             return View(model);
 
@@ -49,10 +49,10 @@ namespace Blitz.WebMVC.Controllers
             return View(model);
         }
 
-        public ActionResult Details()
+        public ActionResult Details(int id)
         {
             var svc = CreateBlitzService();
-            var model = svc.GetBlitzes();
+            var model = svc.GetBlitzById(id);
 
             return View(model);
         }
@@ -112,7 +112,7 @@ namespace Blitz.WebMVC.Controllers
 
         [HttpPost]
         [ActionName("Delete")]
-        [ValidateAntiForgeryToken]
+        
         public ActionResult DeletePost(int id)
         {
             var service = CreateBlitzService();

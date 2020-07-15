@@ -61,7 +61,7 @@
     <Compile Include="BlitzService.cs" />
     <Compile Include="LeadService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RepatBlitzService.cs" />
+    <Compile Include="RepsAtBlitzService.cs" />
     <Compile Include="RepsService.cs" />
   </ItemGroup>
   <ItemGroup>

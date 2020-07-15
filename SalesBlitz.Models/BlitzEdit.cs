@@ -13,5 +13,7 @@ namespace SalesBlitz.Models
         public string Name { get; set; }
         public object Location { get; set; }
         public DateTime Date { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
     }
 }
