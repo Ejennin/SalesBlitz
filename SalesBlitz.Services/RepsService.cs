@@ -61,20 +61,20 @@ namespace SalesReps.Services
             }
         }
 
-        public RepDetail GetRepById(int id)
+        public RepDetail GetRepById(int RepId)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx
                         .Reps
-                        .Single(e => e.RepsId == RepsId);
+                        .Single(e => e.RepId == RepId);
                 return
                     new RepDetail
                     {
                         RepId = entity.RepId,
                         RepName = entity.RepName,
                         Position = entity.Position,
-                        Location = entity.Location
+                        //Location = entity.Location
 
 
                     };

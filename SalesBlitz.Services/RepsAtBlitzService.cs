@@ -2,21 +2,23 @@
 using SalesBlitz.Models.RepsAtBlitzModels;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Configuration;
+using System.Linq;
 
 namespace SalesBlitz.Services
 {
     public class RepsAtBlitzService
     {
-        private readonly int BlitzId;
+        
 
-        public bool CreateRepAtBlitz(RepAtBlitzEdit model)
+       
+
+        public bool CreateRepAtBlitz(RepAtBlitzCreate model)
         {
             var entity =
-                new RepAtBlitzCreate()
+                new RepsAtBlitz()
                 {
 
                     RepId = model.RepId,
@@ -31,7 +33,7 @@ namespace SalesBlitz.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.RepAtBlitz.Add(entity);
+                ctx.RepsAtBlitzes.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -41,7 +43,7 @@ namespace SalesBlitz.Services
             throw new NotImplementedException();
         }
 
-        public IEnumerable<RepAtBlitzItem> GetBlitz()
+        public IEnumerable<RepAtBlitzItem> GetBlitz(int BlitzId)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -50,7 +52,7 @@ namespace SalesBlitz.Services
                     ctx
                         // May need to change out BlitzID to RepId or Lead Id
                         .Blitzes
-                        .ToList()
+                        //.ToList()
                         // int BlitzId = 0;
                         .Where(e => e.BlitzId == BlitzId)
                         .Select(
@@ -93,7 +95,7 @@ namespace SalesBlitz.Services
             {
                 var entity =
                     ctx
-                        .RepAtBlitz
+                        .RepsAtBlitzes
                         .Single(e => e.RepId == model.RepId);
 
                 entity.RepId = model.RepId;
@@ -113,10 +115,10 @@ namespace SalesBlitz.Services
             {
                 var entity =
                     ctx
-                        .RepAtBlitz
+                        .RepsAtBlitzes
                         .Single(e => e.RepId == RepId);
 
-                ctx.Blitzes.Remove(entity);
+                ctx.RepsAtBlitzes.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }

@@ -110,7 +110,7 @@ namespace Rep.WebMVC.Controllers
         {
             var service = CreateRepService();
 
-            service.DeleteReps(id);
+            service.DeleteRep(id);
 
             TempData["SaveResult"] = "Your Rep was deleted";
 

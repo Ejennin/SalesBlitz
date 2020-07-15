@@ -33,11 +33,11 @@ namespace SalesBlitz.Data
         }
 
         public DbSet<Blitz> Blitzes { get; set; }
-        public object Blitz { get; set; }
-        public object Lead { get; set; }
-        public object Rep { get; set; }
-        public object RepAtBlitz { get; set; }
-        public object Reps { get; set; }
+        
+        public DbSet <Lead> Leads{ get; set; }
+        
+        public DbSet <RepsAtBlitz> RepsAtBlitzes { get; set; }
+        public DbSet <Rep> Reps { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

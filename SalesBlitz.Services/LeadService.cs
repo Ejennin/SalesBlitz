@@ -28,6 +28,8 @@ namespace SalesLead.Service
                     Content = model.Content,
                     Origin = model.Origin,
                     Status = model.Status,
+                    BlitzID = model.BlitzID,
+
                     
                     CreatedUtc = model.CreatedUtc
 
@@ -35,7 +37,7 @@ namespace SalesLead.Service
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Lead.Add(entity);
+                ctx.Leads.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -48,7 +50,7 @@ namespace SalesLead.Service
                 var query =
                     ctx
                         
-                        .Lead
+                        .Leads
                         //.ToList()
                         // int LeadId = 0;
                         //.Where(e => e.LeadId == LeadId)
@@ -60,7 +62,7 @@ namespace SalesLead.Service
                                     Content = e.Content,
                                     Origin = e.Origin,
                                     Status = e.Status,
-                                    BlitzId = e.BlitzId,
+                                    //BlitzId = e.BlitzId,
                                     CreatedUtc = e.CreatedUtc
 
                                 }
@@ -75,7 +77,7 @@ namespace SalesLead.Service
             using (var ctx = new ApplicationDbContext())
             {
                 var entity = ctx
-                        .Lead
+                        .Leads
                         .Single(e => e.LeadId == id);
                 return
                     new LeadDetail
@@ -84,7 +86,7 @@ namespace SalesLead.Service
                         Content = entity.Content,
                         Origin = entity.Origin,
                         Status = entity.Status,
-                        BlitzID = entity.BlitzId
+                        //BlitzID = entity.BlitzId
                         
 
 
@@ -98,7 +100,7 @@ namespace SalesLead.Service
             {
                 var entity =
                     ctx
-                        .Lead
+                        .Leads
                         .Single(e => e.LeadId == model.LeadId);
 
                 entity.Content = model.Content;
@@ -115,10 +117,10 @@ namespace SalesLead.Service
             {
                 var entity =
                     ctx
-                        .Lead
+                        .Leads
                         .Single(e => e.LeadId == LeadId);
 
-                ctx.Lead.Remove(entity);
+                ctx.Leads.Remove(entity);
 
                 return ctx.SaveChanges() == 1;
             }
