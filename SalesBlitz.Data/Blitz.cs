@@ -14,7 +14,7 @@ namespace SalesBlitz.Data
         [Key]
         public int BlitzId { get; set; }
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
         [Required]
         public string Location { get; set; }
         [Required]
@@ -22,6 +22,7 @@ namespace SalesBlitz.Data
 
         public DateTimeOffset CreatedUtc { get; set; }
         public string Url { get; set; }
+
 
         public ICollection<RepsAtBlitz> RepsAtBlitzes { get; set; }
 

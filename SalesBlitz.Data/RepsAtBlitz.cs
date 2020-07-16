@@ -12,15 +12,20 @@ namespace SalesBlitz.Data
     {
         
         [Key]
+        public int RepsId { get; set; }
+        public string RepName { get; set; }
+        //public string Position { get; set; }
+
+
+        [ForeignKey(nameof(Rep))]
         public int RepId { get; set; }
+        public virtual Rep Rep { get; set; }
+
+        [ForeignKey(nameof(Blitz))]
         public int BlitzId { get; set; }
-        public bool HomeArea { get; set; }
 
-        [ForeignKey("Rep")]
-        public String RepName { get; set; }
+        public virtual Blitz Blitz { get; set; }
         public string Position { get; set; }
-
-        
     }
 }
 

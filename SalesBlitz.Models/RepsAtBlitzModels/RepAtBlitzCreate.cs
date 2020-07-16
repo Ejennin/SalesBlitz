@@ -9,11 +9,13 @@ namespace SalesBlitz.Models.RepsAtBlitzModels
 {
     public class RepAtBlitzCreate
     {
-        public int RepId { get; set; }
+        public int RepsId { get; set; }
         public int BlitzId { get; set; }
         public bool HomeArea { get; set; }
 
-        public String RepName { get; set; }
+        public string BlitzName { get; set; }
+
+        public string RepName { get; set; }
         public string Position { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SalesBlitz.Data
 {
-    class Account
+    public class Account
     {
     }
 }

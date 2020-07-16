@@ -25,6 +25,7 @@ namespace SalesBlitz.Data
 
         public string Url { get; set; }
 
+
     }
 }
 

@@ -64,6 +64,18 @@
     <Compile Include="Migrations\202007131545333_first.designer.cs">
       <DependentUpon>202007131545333_first.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202007151717413_AddClasses.cs" />
+    <Compile Include="Migrations\202007151717413_AddClasses.designer.cs">
+      <DependentUpon>202007151717413_AddClasses.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007151725151_fixigForeignKeys.cs" />
+    <Compile Include="Migrations\202007151725151_fixigForeignKeys.designer.cs">
+      <DependentUpon>202007151725151_fixigForeignKeys.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202007152044475_DataChange.cs" />
+    <Compile Include="Migrations\202007152044475_DataChange.designer.cs">
+      <DependentUpon>202007152044475_DataChange.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Rep.cs" />
     <Compile Include="IdentityModels.cs" />
@@ -77,6 +89,15 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202007131545333_first.resx">
       <DependentUpon>202007131545333_first.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151717413_AddClasses.resx">
+      <DependentUpon>202007151717413_AddClasses.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007151725151_fixigForeignKeys.resx">
+      <DependentUpon>202007151725151_fixigForeignKeys.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202007152044475_DataChange.resx">
+      <DependentUpon>202007152044475_DataChange.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -15,14 +15,14 @@ namespace Blitz.WebMVC.Controllers
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "SALES BLITZ, is used to organize group face to face calls on an individual territory to give that market a quick boost. It manages getting the territories sales funnel full, by blanketing a market with in person calls. Ideally used as a 1-2 day event. This program assist a group to pay it forward by helping out a team member. ";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Sales Solutions Group LLC";
 
             return View();
         }

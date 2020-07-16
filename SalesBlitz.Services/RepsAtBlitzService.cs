@@ -11,28 +11,34 @@ namespace SalesBlitz.Services
 {
     public class RepsAtBlitzService
     {
-        
 
-       
+
+
 
         public bool CreateRepAtBlitz(RepAtBlitzCreate model)
         {
-            var entity =
-                new RepsAtBlitz()
-                {
-
-                    RepId = model.RepId,
-                    BlitzId = model.BlitzId,
-                    HomeArea = model.HomeArea,
-                    RepName = model.RepName,
-                    Position = model.Position,
-                    
-
-
-                };
-
             using (var ctx = new ApplicationDbContext())
             {
+                int repId = ctx.Reps.FirstOrDefault(e => e.RepName == model.RepName).RepId;
+
+                int blitzId = ctx.Blitzes.FirstOrDefault(e => e.Name == model.BlitzName).BlitzId;
+                var entity =
+                    new RepsAtBlitz()
+                    {
+
+                        RepsId = model.RepsId,
+                    //    BlitzId = model.BlitzId,
+                    //HomeArea = model.HomeArea,
+                        RepName = model.RepName,
+                    //Position = model.Position,
+                     //   BlitzName = model.BlitzName,
+                        RepId = repId,
+                        BlitzId = blitzId
+
+
+                    };
+
+
                 ctx.RepsAtBlitzes.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -59,9 +65,9 @@ namespace SalesBlitz.Services
                             e =>
                                 new RepAtBlitzItem
                                 {
-                                    
+
                                     BlitzId = e.BlitzId,
-                                    
+
 
                                 }
                         );
@@ -81,8 +87,8 @@ namespace SalesBlitz.Services
                     new RepAtBlitzDetail
                     {
                         BlitzId = entity.BlitzId,
-                        
-                        
+
+
 
 
                     };
@@ -100,9 +106,9 @@ namespace SalesBlitz.Services
 
                 entity.RepId = model.RepId;
                 entity.BlitzId = model.BlitzId;
-                entity.HomeArea = model.HomeArea;
+                //entity.HomeArea = model.HomeArea;
                 entity.RepName = (string)model.RepName;
-                entity.Position = model.Position;
+                //entity.Position = model.Position;
 
 
                 return ctx.SaveChanges() == 1;
@@ -125,4 +131,4 @@ namespace SalesBlitz.Services
         }
     }
 }
-    
+

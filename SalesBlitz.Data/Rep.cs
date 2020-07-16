@@ -10,12 +10,15 @@ namespace SalesBlitz.Data
     public class Rep
     {
         [Key]
-
         public int RepId { get; set; }
         [Required]
-        public String RepName { get; set; }
+        public string RepName { get; set; }
         public string Position { get; set; }
 
+        public bool HomeArea { get; set; }
+
         public DateTimeOffset CreatedUtc { get; set; }
+
+        public ICollection<RepsAtBlitz> RepsAtBlitzes { get; set; }
     }
 }
