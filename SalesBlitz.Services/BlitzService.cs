@@ -10,10 +10,11 @@ namespace SalesBlitz.Service
 {
     public class BlitzService
     {
-        public readonly Guid _userId;
-        public BlitzService (Guid userId)
+        private Guid userId;
+
+        public BlitzService(Guid userId)
         {
-            _userId = userId;
+            this.userId = userId;
         }
 
         public bool CreateBlitz(BlitzCreate model)
@@ -25,7 +26,8 @@ namespace SalesBlitz.Service
                     Name = model.Name,
                     Location = model.Location,
                     Date = model.Date,
-                    
+                    CreatedUtc = model.CreatedUtc
+
                 };
 
             using (var ctx = new ApplicationDbContext())
@@ -35,16 +37,18 @@ namespace SalesBlitz.Service
             }
         }
 
-        public IEnumerable<BlitzItem> GetBlitzes()
+        public IEnumerable<BlitzItem> GetBlitz()
         {
             using (var ctx = new ApplicationDbContext())
             {
-                int BlitzId = 0;
+                
                 var query =
                     ctx
                     // May need to change out BlitzID to RepId or Lead Id
                         .Blitzes
-                        .Where(e => e.BlitzId == BlitzId)
+                        //.ToList()
+                        // int BlitzId = 0;
+                        // .Where(e => e.BlitzId == BlitzId)
                         .Select(
                             e =>
                                 new BlitzItem
@@ -52,7 +56,8 @@ namespace SalesBlitz.Service
                                     BlitzId = e.BlitzId,
                                     Name = e.Name,
                                     Location = e.Location,
-                                    Date = e.Date
+                                    Date = e.Date,
+                                    CreatedUtc = e.CreatedUtc
 
                                 }
                         );
@@ -67,15 +72,16 @@ namespace SalesBlitz.Service
             {
                 var entity = ctx
                         .Blitzes
-                        .Single(e => e.BlitzId == id && e.UserId == _userId);
+                        .Single(e => e.BlitzId == id );
                 return
                     new BlitzDetail
                     {
                         BlitzId = entity.BlitzId,
                         Name = entity.Name,
                         Location = entity.Location,
-                        Date = entity.Date
+                        Date = entity.Date,
                         
+
                     };
             }
         }
@@ -87,7 +93,7 @@ namespace SalesBlitz.Service
                 var entity =
                     ctx
                         .Blitzes
-                        .Single(e => e.BlitzId == model.BlitzId && e.UserId == _userId);
+                        .Single(e => e.BlitzId == model.BlitzId );
 
                 entity.Name = model.Name;
                 entity.Location = (string)model.Location;
@@ -104,7 +110,7 @@ namespace SalesBlitz.Service
                 var entity =
                     ctx
                         .Blitzes
-                        .Single(e => e.BlitzId == BlitzId && e.UserId == _userId);
+                        .Single(e => e.BlitzId == BlitzId);
 
                 ctx.Blitzes.Remove(entity);
 

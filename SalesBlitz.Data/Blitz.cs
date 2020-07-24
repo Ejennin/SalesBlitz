@@ -14,12 +14,23 @@ namespace SalesBlitz.Data
         [Key]
         public int BlitzId { get; set; }
         [Required]
-        public String Name { get; set; }
+        public string Name { get; set; }
         [Required]
         public string Location { get; set; }
         [Required]
         public DateTime Date { get; set; }
+
+        public DateTimeOffset CreatedUtc { get; set; }
         public string Url { get; set; }
+
+
+        public ICollection<RepsAtBlitz> RepsAtBlitzes { get; set; }
+
+        public ICollection<Lead> Leads { get; set; } 
+
+
+
+
 
     }
 }

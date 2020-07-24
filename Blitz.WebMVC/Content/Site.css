@@ -1,19 +1,19 @@
 ﻿body {
-    padding-top: 50px;
+    resize:inherit;
+    padding-top: 32px;
     padding-bottom: 20px;
+    background-image:url(Image/Operator.jpg)
 }
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    text-decoration: wavy;
+    width: 75%;
+    height: 30%;
+    border-radius: 50px 50px 50px 50px;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
@@ -21,4 +21,27 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+.navbar-header {
+    max-width: 280px;
+}
+.navbar-custom {
+    max-height: 3em;
+    text-size-adjust:auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+}
+.nav.navbar-nav.navbar-right li a {
+    color: gold;
+}
+.nav.navbar-nav.navbar-nav li a {
+    color: gold;
+    
+}
+
+.container body-content {
+    max-width: 50%;
+    
+
 }
