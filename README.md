@@ -4,7 +4,7 @@ The purpose is to blanket the market and give that territory a quick boost to sa
 The app will use a SalesForce API for Accounts and scheduling Appointments.
 Eventually the app can include Geo mapping and a mutual calendar to schedule Follow up calls by the host.
 
-The app is designed to automated a process that I once performed manually.
+The app is designed to automate a process that I once performed manually.
 I'd determine what territories were in need of a boost based on performance and the current trend, particularly any special circumstances, like loss of major account. 
 Set up a date based on monthly meetings, get involvement and leads from internal partners that service and maintenance  accounts. 
 	Organize teams.
